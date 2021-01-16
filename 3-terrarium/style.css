@@ -40,6 +40,7 @@ h1, p {
   position: absolute;
   max-width: 100%;
   z-index: 3;
+  touch-action: none;
 }
 
 .terrarium-container {
