@@ -1,107 +1,126 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
+html {
+  height: 100%;
 }
 
-h1 {
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+}
+
+h1, p {
   color: #3a241d;
   text-align: center;
+  margin: 20px 0 0 0;
+}
+
+.main-grid-template {
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  height: 100%;
 }
 
 .container {
-  background-color: #eee;
-  width: 15%;
-  height: 100%;
-  padding: 10px;
-}
-
-#left-container {
-  left: 0px;
-  top: 0px;
-  position: absolute;
-}
-
-#right-container {
-  right: 0px;
-  top: 0px;
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: #eee;
+  padding-top: 50px;
 }
 
 .plant-holder {
-  position: relative;
-  height: 13%;
-  left: 10px;
+  display: flex;
+  width: 80%;
+  max-width: 150px;
+  margin-top: -30%;
+  z-index: 2;
 }
 
 .plant {
-  position: absolute;
-  max-width: 150%;
-  max-height: 150%;
-  z-index: 2;
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
 }
 
-.jar-walls {
-  height: 80%;
-  width: 60%;
-  background: #d1e1df;
-  border-radius: 7%;
-  position: absolute;
-  bottom: 0.5%;
-  left: 20%;
-  opacity: 0.5;
-  z-index: 1;
+.terrarium-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.terrarium-grid {
+  display: grid;
+  grid-template: 50px 1fr 50px / 50px 1fr 50px;
+  height: 100%;
+}
+
+.terrarium-jar {
+  display: grid;
+  grid-template-rows: 5% 20fr 1%;
+  grid-column-start: 2;
+  grid-row-start: 2;
 }
 
 .jar-top {
-  width: 50%;
-  height: 5%;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+}
+
+.jar-top-fill {
+  grid-column-start: 2;
   background: #d1e1df;
-  position: absolute;
-  bottom: 80.5%;
-  left: 25%;
   opacity: 0.7;
-  z-index: 1;
 }
 
-.jar-bottom {
-  width: 50%;
-  height: 1%;
+.jar-walls {
+  display: grid;
+  grid-template-rows: 1fr 8%;
+  border-radius: 7%;
   background: #d1e1df;
-  position: absolute;
-  bottom: 0%;
-  left: 25%;
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
-.dirt {
-  width: 58%;
-  height: 5%;
-  background: #3a241d;
-  position: absolute;
-  border-radius: 0 0 4rem 4rem;
-  bottom: 1%;
-  left: 21%;
-  opacity: 0.7;
-  z-index: -1;
-}
-
-.jar-glossy-long {
-  width: 2%;
-  height: 24%;
-  background: rgb(209, 246, 255);
-  position: absolute;
-  border-radius: 15px;
-  bottom: 15%;
-  left: 3%;
-  z-index: 2;
+.jar-water {
+  display: grid;
+  grid-template: 7fr 6% 3% 24% 1fr / 1fr 3% 20fr;
 }
 
 .jar-glossy-short {
-  width: 2%;
-  height: 6%;
+  grid-column-start: 2;
+  grid-row-start: 2;
   background: rgb(209, 246, 255);
-  position: absolute;
   border-radius: 15px;
-  bottom: 45%;
-  left: 3%;
   z-index: 2;
+}
+
+.jar-glossy-long {
+  grid-column-start: 2;
+  grid-row-start: 4;
+  background: rgb(209, 246, 255);
+  border-radius: 15px;
+  z-index: 2;
+}
+
+.jar-dirt {
+  display: grid;
+  grid-template-columns: 10px 1fr 10px;
+}
+
+.jar-dirt-fill {
+  grid-column-start: 2;
+  background: #3a241d;
+  border-radius: 0 0 4rem 4rem;
+  z-index: -1;
+}
+
+.jar-bottom {
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+}
+
+.jar-bottom-fill {
+  grid-column-start: 2;
+  background: #d1e1df;
+  opacity: 0.7;
+  z-index: 1;
 }
